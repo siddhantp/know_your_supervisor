@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Fransisco Board of Supervisors</title>
+  <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/x-handlebars-template" id="supervisor-template">
+    <ul data-role="listview" data-theme="b" id="supervisors-listview">
+      {{#each this}}
+      <li data-sid="supervisor{{district}}">
+        <a href="#">{{name}}<p>District:{{district}}</p></a>
+      </li>
+      {{/each}}
+    </ul>
+  </script>
+  <script type="text/x-handlebars-template" id="supervisor-info-template">
+    {{#each this}}
+    <center>
+    <table data-role="table" id="supervisor{{district}}" class="supervisor-info-table">
+        <tr><td>District:</td><td>{{district}}</td></tr>
+        <tr><td>Name:</td><td>{{name}}</td></tr>
+        <tr><td>Address:</td><td><address>{{address}}</address></td></tr>
+        <tr><td>Phone:</td><td>{{phone}}</td></tr>
+        <tr>
+          <td colspan="2">
+            <a href="mailto:{{email}}" data-role="button" data-mini="true" class="ui-btn ui-btn-b ui-corner-all ui-shadow">Email</a>
+            <a href="{{website}}" data-role="button" data-mini="true" class="ui-btn ui-btn-b ui-corner-all ui-shadow">Website</a>
+            <a href="{{facebook}}" data-role="button" data-mini="true" class="ui-btn ui-btn-b ui-corner-all ui-shadow">Connect On Facebook</a>
+            <a href="http://twitter.com/{{twitter}}" data-role="button" data-mini="true" class="ui-btn ui-btn-b ui-corner-all ui-shadow">Connect On Twitter</a>
+          </td>
+        </tr>
+    </table>
+    </center>
+    {{/each}}
+  </script>
+</head>
+<body>
+  <div id="supervisors-list">
+    <div class="ui-bar ui-bar-b">
+      <h1>Know Your Supervisor</h1>
+    </div>
+  </div>
+  <div id="loading">
+  <img src="loading29.gif" alt="Loading...">
+</div>
+  <div id="supervisors-info">
+    <div class="ui-bar ui-bar-b">
+      <h1>
+        <span id="back-btn" data-role="button" data-mini="true" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-icon-right ui-icon-arrow-l">Back</span>
+      </h1>
+    </div>
+  </div>
+  <footer>
+    <div class="ui-bar ui-bar-b">
+      <p><strong>Disclaimer:</strong>This is not official website. Go to <a href="http://www.sfbos.org/">Official Website</a></p>
+    </div>
+  </footer>
+</body>
+</html>
