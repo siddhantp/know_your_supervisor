@@ -1,0 +1,24 @@
+#loading {
+	margin:auto;
+	width:31px;
+}
+#supervisors-info,.supervisor-info-table {
+	display: none;
+}
+.ui-bar {
+	text-align: center;
+}
+#supervisors-info {
+	background-color: #333333;
+	color: #ffffff;
+}
+.supervisor-info-table td {
+	padding: 2px;
+}
+
+footer p {
+	font-size: 0.5em;
+}
+footer a{
+	text-decoration: none;
+}
